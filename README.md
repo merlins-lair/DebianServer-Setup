@@ -7,7 +7,7 @@ su
 
 apt-get install curl
 
-curl https://raw.githubusercontent.com/beech93/Debian-Setup/refs/heads/main/server.sh -o server.sh
+curl https://raw.githubusercontent.com/merlins-lair/Debian-Setup/refs/heads/main/server.sh -o server.sh
 
 chmod +x server.sh
 
