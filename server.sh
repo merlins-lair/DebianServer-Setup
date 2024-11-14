@@ -31,7 +31,7 @@ setup_firewall () {
     echo "UFW enabled..."
     sudo apt-get install unattended-upgrades
     echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | debconf-set-selections
-    dpkg-reconfigure -f noninteractive unattended-upgrades
+    sudo dpkg-reconfigure -f noninteractive unattended-upgrades
     echo "Unattended security updates enabled"
 }
 
