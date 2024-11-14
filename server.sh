@@ -29,6 +29,10 @@ setup_firewall () {
     sudo ufw allow ssh > /dev/null 2>&1
     sudo ufw enable
     echo "UFW enabled..."
+    sudo apt-get install unattended-upgrades
+    echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | debconf-set-selections
+    dpkg-reconfigure -f noninteractive unattended-upgrades
+    echo "Unattended security updates enabled"
 }
 
 install_software () {
@@ -38,7 +42,7 @@ install_software () {
 }
 
 while true; do
-    options=("Setup Sudo" "Install Docker" "Setup Firewall" "Install Software" "Exit")
+    options=("Setup Sudo" "Install Docker" "Setup Firewall & Security Updates" "Install Software" "Exit")
 
     echo "Debian Server Setup: "
     select opt in "${options[@]}"; do
